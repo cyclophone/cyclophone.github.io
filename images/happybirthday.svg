@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700">
+Hello! Happy birthday!
+<symbol id="balloon" stroke-width="5">
+<path id="string" d="M 55,135 q-25,35 0,70 q25,35 0,70" stroke="black" fill="none" stroke-width="3">
+</path>
+<path d="M 55,110 l-15,30 h30 z">
+</path>
+<ellipse rx="50" ry="60" cx="52.5" cy="62.5">
+</ellipse>
+</symbol>
+
+<path id="motion0" d="m0,0 v-30 v90 v-60" fill="none" stroke="none"></path>
+<path id="motion1" d="m0,0 v-10 v70 v-60" fill="none" stroke="none"></path>
+<path id="motion2" d="m0,0 v-20 v70 v-50" fill="none" stroke="none"></path>
+<path id="motion3" d="m0,0 v-30 v100 v-70" fill="none" stroke="none"></path>
+<path id="motion4" d="m0,0 v-5 v50 v-45" fill="none" stroke="none"></path>
+<path id="motion5" d="m0,0 v-20 v80 v-60" fill="none" stroke="none"></path>
+
+<use href="#balloon" fill="#ff3333" stroke="#ec0000" transform="translate(120,70)">
+<animateMotion dur="6s" repeatCount="indefinite">
+<mpath href="#motion0"></mpath>
+</animateMotion>
+</use>
+
+<use href="#balloon" fill="#aceeff" stroke="#55d8ec" transform="translate(260,40)">
+<animateMotion dur="5s" repeatCount="indefinite">
+<mpath href="#motion1"></mpath>
+</animateMotion>
+</use>
+
+<use href="#balloon" fill="#33ffac" stroke="#00dc33" transform="translate(380,50)">
+<animateMotion dur="4s" repeatCount="indefinite">
+<mpath href="#motion2"></mpath>
+</animateMotion>
+</use>
+
+<use href="#balloon" fill="#ffffac" stroke="#dcdc33" transform="translate(610,30)">
+<animateMotion dur="7s" repeatCount="indefinite">
+<mpath href="#motion4"></mpath>
+</animateMotion>
+</use>
+
+<use href="#balloon" fill="#ffacee" stroke="#dc33ac" transform="translate(540,70)">
+<animateMotion dur="5s" repeatCount="indefinite">
+<mpath href="#motion3"></mpath>
+</animateMotion>
+</use>
+
+<use href="#balloon" fill="#ac33ff" stroke="#8833dc" transform="translate(750,40)">
+<animateMotion dur="5.5s" repeatCount="indefinite">
+<mpath href="#motion5"></mpath>
+</animateMotion>
+</use>
+
+<g id="happybirthday" transform="translate(150,350)">
+<g id="happy" transform="translate(120)">
+<path d="M 0,0 v 100 a 10,10 0 1,0 20,0 v -40 h 40 v 40 a 10,10 0 1,0 20,0 v -100 a 10,10 0 1,0 -20,0 v 40 h -40 v -40 a 10,10 0 1,0 -20,0 z" fill="#ff5555" stroke="#dc4444" stroke-width="8"></path>
+<path d="M 100,100 l30,-100 a 10,10 0 1,1 20,0 l30,100 a 10,10 0 1,1 -20,0 l-6,-20 h-28 l -6,20 a 10,10 0 1,1 -20,0 z m 32,-40 h 16 l -8,-26.6666666 z" fill="orange" stroke="#dc8c44" stroke-width="8"></path>
+<path d="M 200,100 v-110 h40 a40,40 0 1,1 0,80 h-20 v30 a 10,10 0 1,1 -20,0 z m20,-50 h20 a 20,20 0 1,0 0,-40 h-20 z" fill="gold" stroke="#dc9c44" stroke-width="8"></path>
+<path d="M 300,100 v-110 h40 a40,40 0 1,1 0,80 h-20 v30 a 10,10 0 1,1 -20,0 z m20,-50 h20 a 20,20 0 1,0 0,-40 h-20 z" fill="#55ff55" stroke="#44dc44" stroke-width="8"></path>
+<path d="M 400,0 a 10,10 0 1,1 20,0 l20,40 l20,-40 a 10,10 0 1,1 20,0 l-30,60 v40 a 10,10 0 1,1 -20,0 v-40 l-30,-60 z" fill="#55dcff" stroke="#448cdc" stroke-width="8"></path>
+</g>
+<g id="birthday" transform="translate(0,250)">
+<path d="M 0,10 v-120 h50 a30,30 0 1,1 0,60 a30,30 0 1,1 0,60 h-50 z m20,-20 h25 a15,15 0 1,0 0,-30 h-25 z m0,-50 h25 a15,15 0 1,0 0,-30 h-25 z" fill="#ac55ff" stroke="#8c44dc" stroke-width="8" stroke-linejoin="miter">
+</path>
+<path d="M 100,0 v-100 a 10,10 0 1,1 20,0 v100 a 10,10 0 1,1 -20,0 z" fill="#ff5555" stroke="#dc4444" stroke-width="8">
+</path>
+<path d="M 140,0 v-110 h40 a40,40 0 1,1 0,80 l30,40 h-20 l-30,-40 v30 a 10,10 0 1,1 -20,0 z m20,-50 h20 a 20,20 0 1,0 0,-40 h-20 z" fill="orange" stroke="#dc8c44" stroke-width="8"></path>
+<path d="M 250,-110 h60 a10,10 0 1,1 0,20 h-25 v90 a10,10 0 1,1 -20,0 v-90 h-25 a10,10 0 1,1 0,-20 z" fill="gold" stroke="#dc9c44" stroke-width="8"></path>
+<path d="M 340,-100 v 100 a 10,10 0 1,0 20,0 v -40 h 40 v 40 a 10,10 0 1,0 20,0 v -100 a 10,10 0 1,0 -20,0 v 40 h -40 v -40 a 10,10 0 1,0 -20,0 z" fill="#55ff55" stroke="#44dc44" stroke-width="8"></path>
+<path d="M 440,10 v-120 h30 a50,60 0 1,1 0,120 h-30 z m20,-20 h10 a30,40 0 1,0 0,-80 h-10 z" fill="#55dcff" stroke="#448cdc" stroke-width="8"></path>
+<path d="M 540,0 l30,-100 a 10,10 0 1,1 20,0 l30,100 a 10,10 0 1,1 -20,0 l-6,-20 h-28 l -6,20 a 10,10 0 1,1 -20,0 z m 32,-40 h 16 l -8,-26.6666666 z" fill="#ac55ff" stroke="#8c44dc" stroke-width="8"></path>
+<path d="M 640,-100 a 10,10 0 1,1 20,0 l20,40 l20,-40 a 10,10 0 1,1 20,0 l-30,60 v40 a 10,10 0 1,1 -20,0 v-40 l-30,-60 z" fill="#ff5555" stroke="#dc4444" stroke-width="8"></path>
+</g>
+</g>
+</svg>

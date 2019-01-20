@@ -1,0 +1,56 @@
+:root {
+  --panel-width: 480px;
+  --panel-height: 320px;
+}
+
+body {
+  background: url('purple-nebula-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.title {
+  padding: 30px;
+  font: 20pt arial;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.panel {
+  width: var(--panel-width);
+  height: var(--panel-height);
+  background-color: black;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 10px 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel > img {
+  max-width: var(--panel-width);
+  max-height: var(--panel-height);
+}
+
+.panel > iframe {
+  width: var(--panel-width);
+  height: var(--panel-height);
+  overflow: hidden;
+}
+
+img.plus {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+}

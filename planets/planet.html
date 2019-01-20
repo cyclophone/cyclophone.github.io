@@ -1,0 +1,253 @@
+<html>
+<head>
+<title> my first three.js planets </title>
+<style> body { margin:0; background-image:url(stars.png); } canvas { width: 100%; height: 100%;} </style>
+</head>
+<body>
+<script src="three.min.js"></script>
+<script> var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera( 60, window.innerWidth/window.innerHeight, 0.1, 2000 );
+camera.position.z = 250;
+camera.position.y = 20;
+var lights = new THREE.PointLight(0xffffff, 1);
+lights.position.set(0, 50, 0); 
+scene.add(lights);
+var superlight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1);
+scene.add(superlight);
+
+var renderer = new THREE.WebGLRenderer({alpha:true});
+renderer.setSize( window.innerWidth, window.innerHeight);
+document.body.appendChild( renderer.domElement );
+
+var nepty = new THREE.TextureLoader().load("nepty.jpg");
+var circlesphere = new THREE.SphereGeometry(6, 64, 32);
+var bluenepty = new THREE.MeshLambertMaterial({map:nepty});
+var neptune = new THREE.Mesh(circlesphere, bluenepty);
+scene.add(neptune);
+
+var pig = new THREE.TextureLoader().load("ring.jpg");
+var neptyring = new THREE.MeshPhongMaterial({map:pig, transparent:true, opacity:0.3});
+var neptunering = new THREE.TorusGeometry(9, 0.5, 16, 64);
+var ri = new THREE.Mesh(neptunering, neptyring);
+ri.scale.z = 0.1;
+ri.rotation.x = Math.PI/2;
+neptune.add(ri);
+
+neptune.rotation.order = "ZYX";
+neptune.rotation.z = Math.PI/180*28.32;
+neptune.position.x = 250;
+var neptuneorbit = new THREE.Object3D();
+scene.add(neptuneorbit);
+neptuneorbit.add(neptune);
+
+var bluerectangle = new THREE.TextureLoader().load("uranus.jpg");
+var urainy = new THREE.SphereGeometry(6, 64, 32);
+var bluecyan = new THREE.MeshLambertMaterial({map:bluerectangle});
+var uranus = new THREE.Mesh(urainy, bluecyan);
+
+var colorrectangle = new THREE.TextureLoader().load("colorfulring.jpg");
+
+var coloring = new THREE.MeshPhongMaterial({map:colorrectangle, transparent:true, opacity: 0.9});
+var ringsring = new THREE.TorusGeometry(10, 1, 16, 64);
+var ringring = new THREE.Mesh(ringsring, coloring);
+ringring.scale.z = 0.05;
+ringring.rotation.y = Math.PI/2;
+ringring.position.x = 215;
+scene.add(ringring);
+uranus.rotation.z = Math.PI/180*97.77;
+uranus.position.x = 215;
+var uranusorbit = new THREE.Object3D();
+scene.add(uranusorbit);
+uranusorbit.add(uranus); uranusorbit.add(ringring);
+
+// SATURN
+
+var saty = new THREE.TextureLoader().load("saturn.jpg");
+
+var saturns = new THREE.SphereGeometry(10, 64, 32);
+var picture = new THREE.MeshLambertMaterial( {map: saty} );
+var saturn =  new THREE.Mesh( saturns, picture);
+
+
+var image = new THREE.TextureLoader().load("rotatedring.jpg");
+
+var satyrings = new THREE.MeshPhongMaterial( { map: image, transparent:true, opacity: 0.9} );
+var satyring = new THREE.TorusGeometry(17, 2, 16, 64);
+var superring = new THREE.Mesh( satyring, satyrings );
+superring.scale.z = 0.05;
+superring.rotation.x = Math.PI/2;
+saturn.add( superring);
+saturn.position.x = 175;
+saturn.rotation.order = "ZYX"; 
+saturn.rotation.z = Math.PI/180*26.73;
+var saturnorbit = new THREE.Object3D();
+scene.add(saturnorbit);
+saturnorbit.add( saturn );
+
+// JUPITER
+
+var juipy = new THREE.TextureLoader().load("jupiter.jpg");
+
+			var jupitersphere = new THREE.SphereGeometry(11, 64, 32);
+			var jupitermap = new THREE.MeshLambertMaterial( { map: juipy} );
+			var jupiter = new THREE.Mesh( jupitersphere, jupitermap );
+												
+			var pig = new THREE.TextureLoader().load("ring.jpg");
+
+			var juipyrings = new THREE.MeshPhongMaterial( { map:pig, transparent:true, opacity:0.3} );
+			var juipyring = new THREE.TorusGeometry(16, 0.5, 16, 64);
+			var ringplanet = new THREE.Mesh( juipyring, juipyrings );
+			ringplanet.scale.z = 0.1;
+			ringplanet.rotation.x = Math.PI/2;
+			var jupiterorbit = new THREE.Object3D();
+			scene.add(jupiterorbit);
+			jupiter.position.x = 135;
+			jupiterorbit.add( jupiter );
+			jupiter.add( ringplanet);
+			
+
+// MARS
+var marsy = new THREE.TextureLoader().load("marsy.jpg");
+	
+	var marsplanet = new THREE.SphereGeometry(3, 64, 32);
+	var marsmaps = new THREE.MeshLambertMaterial( {map: marsy} );
+	var mars = new THREE.Mesh( marsplanet, marsmaps );
+	mars.position.x = 105;
+	mars.rotation.order = "XYZ";
+	mars.rotation.z = Math.PI*180/25.19;
+
+	var marsorbit = new THREE.Object3D();
+	scene.add(marsorbit);
+	marsorbit.add( mars );
+
+//EARTH
+var earthy = new THREE.TextureLoader().load("earth.jpg");
+
+	var earths = new THREE.SphereGeometry(4, 64, 32);
+	var earthi = new THREE.MeshLambertMaterial( {map: earthy} );
+	var earth = new THREE.Mesh ( earths, earthi );
+	earth.position.x = 85;
+	earth.rotation.order = "XYZ";
+	earth.rotation.z = Math.PI*180/23.26;
+
+	var earthorbit = new THREE.Object3D();
+	scene.add(earthorbit);
+	earthorbit.add( earth );
+
+
+//VENUS
+
+var theven = new THREE.TextureLoader().load("superven.jpg");
+
+var veeny = new THREE.SphereGeometry(4, 64, 32);
+var veenipics = new THREE.MeshLambertMaterial( {map: theven} );
+var venus = new THREE.Mesh( veeny, veenipics );
+venus.rotation.order = "ZYX";
+venus.rotation.z = Math.PI/180*177.3;
+venus.position.x = 65;
+
+var venusorbit = new THREE.Object3D();
+scene.add(venusorbit);
+venusorbit.add(venus);
+//MERCURY
+
+var merc = new THREE.TextureLoader().load("mercury.jpg");
+var merky = new THREE.SphereGeometry(3, 64, 32);
+var mercy = new THREE.MeshLambertMaterial({map:merc});
+var mercury = new THREE.Mesh(merky, mercy);
+mercury.position.x = 45;
+
+var redsun = new THREE.TextureLoader().load("supersunny.jpg");
+var spheresun = new THREE.SphereGeometry(25, 64, 32);
+var redsuns = new THREE.MeshLambertMaterial({map:redsun});
+var sun = new THREE.Mesh(spheresun, redsuns);
+sun.rotation.order = "ZYX";
+sun.rotation.z = Math.PI/180*7.5;
+sun.position.x = 0;
+scene.add(sun);
+
+var mercuryorbit = new THREE.Object3D();
+scene.add(mercuryorbit);
+mercuryorbit.add(mercury);
+
+//SKY
+
+
+
+// ANIMATE
+
+			var render = function () {
+				requestAnimationFrame( render );
+	
+				saturn.rotation.y += 0.01;
+				jupiter.rotation.y += 0.02;
+				mars.rotation.y += 0.005;
+				earth.rotation.y += 0.006;
+				venus.rotation.y -= 0.003;
+				mercury.rotation.y += 0.003;
+				uranus.rotation.x -= 0.009;
+				ringring.rotation.x -= 0.009;
+				neptune.rotation.y += 0.009;
+				sun.rotation.y += 0.004;
+				mercuryorbit.rotation.y += 0.01;
+				venusorbit.rotation.y += 0.005;
+				earthorbit.rotation.y += 0.004;
+				marsorbit.rotation.y += 0.003;
+				jupiterorbit.rotation.y += 0.002;
+				saturnorbit.rotation.y += 0.0015;
+				uranusorbit.rotation.y += 0.0012;
+				neptuneorbit.rotation.y += 0.001;
+				renderer.render(scene, camera);
+			};
+			
+			render();
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

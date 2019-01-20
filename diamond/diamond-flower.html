@@ -1,0 +1,54 @@
+<html> 
+<head> 
+<title> my third three.js diamond </title> 
+</head>
+<body>
+<script src="three.min.js"></script>
+<script>
+
+	var scene = new THREE.Scene();
+	var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
+	camera.position.z = 50;
+	camera.position.y = 10;
+	camera.rotation.x = -Math.PI/17;
+
+	var bigpig = new THREE.PointLight(0xFFFFFF, 2);
+	bigpig.position.set(10, 20, 0);
+	scene.add(bigpig);
+	var lighting = new THREE.PointLight (0xFFFFFF, 2);
+	lighting.position.set(10, -17, 0);
+	scene.add(lighting);
+	var light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.8);
+	scene.add(light);
+
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
+	
+	var shiny = new THREE.TextureLoader().load("flower.jpg");
+	shiny.mapping= THREE.SphericalReflectionMapping;
+
+	var diamonds = new THREE.MeshPhongMaterial({color:0xFFFFFF, transparent:true, opacity:1, shading:THREE.FlatShading, envMap:shiny, reflectivity: 1, combine: THREE.MultiplyOperation});
+	var diamond = new THREE.CylinderGeometry( 10, 18, 8, 17 );
+	var diamonddiamond = new THREE.Mesh (diamond, diamonds);
+
+	var bigdiamond = new THREE.CylinderGeometry(18, 0, 16, 17);
+	var diamonddiamonddiamond = new THREE.Mesh (bigdiamond, diamonds);
+	diamonddiamonddiamond.position.y = -12;
+
+	var thediamond = new THREE.Object3D();
+	thediamond.add(diamonddiamond, diamonddiamonddiamond);
+	scene.add(thediamond);
+
+
+	animate();
+	function animate(){
+		thediamond.rotation.y+=0.01;
+		renderer.render(scene, camera);
+		requestAnimationFrame(animate);
+	}
+
+
+</script>
+</body>
+</html>
